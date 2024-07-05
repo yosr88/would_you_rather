@@ -1,347 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Will You Rather? - The Ultimate Decision-Making Game</title>
-<style>
-  body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f5ff;
-    color: #333;
-  }
-  header {
-    background-color: #4a69bd;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-  }
-  .game-area {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  }
-  .option {
-    background-color: #6a89cc;
-    color: white;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .option:hover {
-    background-color: #4a69bd;
-  }
-  .stats {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  .stat-box {
-    background-color: #f1f2f6;
-    padding: 10px;
-    border-radius: 5px;
-    width: 45%;
-  }
-  .button {
-    display: inline-block;
-    background-color: #4a69bd;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  footer {
-    background-color: #4a69bd;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-</style>
-</head>
-<body>
-  <header>
-    <h1>Will You Rather?</h1>
-    <p>The Ultimate Decision-Making Game</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Rather? - The Ultimate Decision-Making Game</title>
+    <link rel="stylesheet" href="/main/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Will You Rather?</h1>
+      <p>The Ultimate Decision-Making Game</p>
+    </header>
 
-  <div class="container">
-    <div class="game-area">
-      <h2>About "Will You Rather?"</h2>
-      <p>"Will You Rather?" is an engaging decision-making game that challenges players to choose between two often equally intriguing or difficult scenarios. It's designed to spark discussions, reveal preferences, and sometimes even lead to deep self-reflection.</p>
-      <h3>How to Play:</h3>
-      <ol>
-        <li>Read both options carefully.</li>
-        <li>Consider the implications of each choice.</li>
-        <li>Select the option you prefer (or find less undesirable).</li>
-        <li>Compare your choice with others and discuss!</li>
-      </ol>
-      <p>Our AI-powered system generates unique and thought-provoking scenarios, ensuring that no two games are exactly alike. We also track global statistics, allowing you to see how your choices compare to players around the world.</p>
-      <h3>Features:</h3>
-      <ul>
-        <li>Endless unique scenarios</li>
-        <li>Global player statistics</li>
-        <li>Category-specific game modes (Ethical Dilemmas, Superpowers, Time Travel, etc.)</li>
-        <li>Multiplayer mode for competing with friends</li>
-        <li>Discussion forums to debate choices</li>
-      </ul>
-      <a href="#play" class="button">Start Playing Now!</a>
-    </div>
-    <div class="game-area">
-      <h2>Make Your Choice!</h2>
-      <div class="option" id="optionA">
-        <h3>Would you rather...</h3>
-        <p>Beyonce has won the Grammy Awards 2024?</p>
+    <div class="container">
+      <div class="game-area">
+        <h2>About "Will You Rather?"</h2>
+        <p>
+          "Will You Rather?" is an engaging decision-making game that challenges
+          players to choose between two often equally intriguing or difficult
+          scenarios. It's designed to spark discussions, reveal preferences, and
+          sometimes even lead to deep self-reflection.
+        </p>
+        <h3>How to Play:</h3>
+        <ol>
+          <li>Read both options carefully.</li>
+          <li>Consider the implications of each choice.</li>
+          <li>Select the option you prefer (or find less undesirable).</li>
+          <li>Compare your choice with others and discuss!</li>
+        </ol>
+        <p>
+          Our AI-powered system generates unique and thought-provoking
+          scenarios, ensuring that no two games are exactly alike. We also track
+          global statistics, allowing you to see how your choices compare to
+          players around the world.
+        </p>
+        <h3>Features:</h3>
+        <ul>
+          <li>Endless unique scenarios</li>
+          <li>Global player statistics</li>
+          <li>
+            Category-specific game modes (Ethical Dilemmas, Superpowers, Time
+            Travel, etc.)
+          </li>
+          <li>Multiplayer mode for competing with friends</li>
+          <li>Discussion forums to debate choices</li>
+        </ul>
+        <a href="#play" class="button">Start Playing Now!</a>
       </div>
-      <div class="option" id="optionB">
-        <h3>Or would you rather...</h3>
-        <p>Keep Taylor Swift as the winner?</p>
-      </div>
-
-      <div class="stats">
-        <div class="stat-box">
-          <h4>Option A</h4>
-          <p id="optionA-votes">0% chose this</p>
+      <div class="game-area">
+        <h2>Make Your Choice!</h2>
+        <div class="option" id="optionA">
+          <h3>Would you rather...</h3>
+          <p>Beyonce has won the Grammy Awards 2024?</p>
         </div>
-        <div class="stat-box">
-          <h4>Option B</h4>
-          <p id="optionB-votes">0% chose this</p>
+        <div class="option" id="optionB">
+          <h3>Or would you rather...</h3>
+          <p>Keep Taylor Swift as the winner?</p>
         </div>
-      </div>
 
-      <a href="#previous" class="button" id="previousQuestion" style="display: none;">Previous Question</a>
-      <a href="#next" class="button" id="nextQuestion">Next Question</a>
+        <div class="stats">
+          <div class="stat-box">
+            <h4>Option A</h4>
+            <p id="optionA-votes">0% chose this</p>
+          </div>
+          <div class="stat-box">
+            <h4>Option B</h4>
+            <p id="optionB-votes">0% chose this</p>
+          </div>
+        </div>
+
+        <a
+          href="#previous"
+          class="button"
+          id="previousQuestion"
+          style="display: none"
+          >Previous Question</a
+        >
+        <a href="#next" class="button" id="nextQuestion">Next Question</a>
+      </div>
     </div>
 
-    
-  </div>
+    <footer>
+      <p>&copy; 2024 Will You Rather? All rights reserved.</p>
+      <p>
+        <a href="#privacy">Privacy Policy</a> |
+        <a href="#terms">Terms of Service</a>
+      </p>
+    </footer>
 
-  <footer>
-    <p>&copy; 2023 Will You Rather? All rights reserved.</p>
-    <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
-  </footer>
+    <div class="popup" id="loadingPopup">
+      <p>Transaction in progress, please wait...</p>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-  <script>
-    const contractAddress = '0x7629Bc9a43Ca35C2022F1D81B519288cc755B040'; 
-    const contractABI = [
-      {
-        "inputs": [
-          {
-            "internalType": "uint8",
-            "name": "option",
-            "type": "uint8"
-          }
-        ],
-        "name": "getVotes",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-          }
-        ],
-        "name": "hasVoted",
-        "outputs": [
-          {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint8",
-            "name": "option",
-            "type": "uint8"
-          }
-        ],
-        "name": "vote",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "inputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "name": "votes",
-        "outputs": [
-          {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-      }
-    ]; 
-
-
-    let web3;
-    let contract;
-    let accounts;
-
-    const questions = [
-      {
-        optionA: "Beyonce has won the Grammy Awards 2024?",
-        optionB: "Keep Taylor Swift as the winner?"
-      },
-      {
-        optionA: "See Amy Schumer resign as a comedian?",
-        optionB: "See Chris Rock get slapped again by Will Smith?"
-      },
-      {
-        optionA: "See Zendaya come again for the Next Spiderman?",
-        optionB: "Yes",
-        optionC: "No"
-      },
-      {
-        optionA: "Invest your money in a bank?",
-        optionB: "Buy cryptocurrencies?"
-      },
-      {
-        optionA: "Watch Trump or Biden interview?",
-        optionB: "Watch Star Wars 9?"
-      }
-    ];
-
-    let currentQuestion = 0;
-
-    async function init() {
-      if (window.ethereum) {
-        web3 = new Web3(window.ethereum);
-        try {
-          accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          console.log('MetaMask connected', accounts);
-          contract = new web3.eth.Contract(contractABI, contractAddress);
-          console.log('Contract initialized', contract);
-          updateStats();
-        } catch (error) {
-          console.error('User denied account access', error);
-        }
-      } else {
-        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-      }
-    }
-
-    async function vote(option) {
-      try {
-        console.log('Voting for option:', option);
-        await contract.methods.vote(option).send({ from: accounts[0] });
-        console.log('Vote successful');
-        updateStats();
-      } catch (error) {
-        console.error('Error voting', error);
-      }
-    }
-
-    async function updateStats() {
-      try {
-        const optionAVotes = await contract.methods.getVotes(0).call();
-        const optionBVotes = await contract.methods.getVotes(1).call();
-        
-        // Convert BigInt to number
-        const optionAVotesNumber = Number(optionAVotes);
-        const optionBVotesNumber = Number(optionBVotes);
-        const totalVotes = optionAVotesNumber + optionBVotesNumber;
-
-        const optionAPercentage = (totalVotes === 0) ? 0 : (optionAVotesNumber / totalVotes * 100).toFixed(2);
-        const optionBPercentage = (totalVotes === 0) ? 0 : (optionBVotesNumber / totalVotes * 100).toFixed(2);
-
-        console.log('Option A votes:', optionAVotesNumber, 'Option B votes:', optionBVotesNumber, 'Total votes:', totalVotes);
-
-        document.getElementById('optionA-votes').textContent = `${optionAPercentage}% chose this`;
-        document.getElementById('optionB-votes').textContent = `${optionBPercentage}% chose this`;
-      } catch (error) {
-        console.error('Error updating stats', error);
-      }
-    }
-
-    function loadNextQuestion() {
-      currentQuestion = (currentQuestion + 1) % questions.length;
-      document.getElementById('optionA').querySelector('p').textContent = questions[currentQuestion].optionA;
-      document.getElementById('optionB').querySelector('p').textContent = questions[currentQuestion].optionB;
-
-      if (currentQuestion === questions.length - 1) {
-        document.getElementById('nextQuestion').textContent = "End of Voting";
-        document.getElementById('nextQuestion').removeEventListener('click', loadNextQuestion);
-      } else {
-        document.getElementById('nextQuestion').textContent = "Next Question";
-        document.getElementById('nextQuestion').addEventListener('click', loadNextQuestion);
-      }
-
-      if (currentQuestion > 0) {
-        document.getElementById('previousQuestion').style.display = 'inline-block';
-      } else {
-        document.getElementById('previousQuestion').style.display = 'none';
-      }
-
-      updateStats();
-    }
-
-    function loadPreviousQuestion() {
-      if (currentQuestion > 0) {
-        currentQuestion = (currentQuestion - 1) % questions.length;
-        document.getElementById('optionA').querySelector('p').textContent = questions[currentQuestion].optionA;
-        document.getElementById('optionB').querySelector('p').textContent = questions[currentQuestion].optionB;
-
-        if (currentQuestion < questions.length - 1) {
-          document.getElementById('nextQuestion').textContent = "Next Question";
-          document.getElementById('nextQuestion').addEventListener('click', loadNextQuestion);
-        }
-
-        if (currentQuestion === 0) {
-          document.getElementById('previousQuestion').style.display = 'none';
-        }
-
-        updateStats();
-      }
-    }
-
-    document.getElementById('optionA').addEventListener('click', () => vote(0));
-    document.getElementById('optionB').addEventListener('click', () => vote(1));
-    document.getElementById('nextQuestion').addEventListener('click', loadNextQuestion);
-    document.getElementById('previousQuestion').addEventListener('click', loadPreviousQuestion);
-
-    window.addEventListener('load', init);
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="/main/script.js"></script>
+  </body>
 </html>
